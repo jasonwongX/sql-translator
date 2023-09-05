@@ -14,14 +14,14 @@ export const Header = () => {
   return (
     <header className="flex flex-col sm:flex-row sm:justify-between w-full pt-4 pb-8 px-2">
       <Link href="/" className="flex flex-col">
-        <h1 className="font-mono sm:text-xl tracking-tight">sqlTranslate</h1>
+        <h1 className="font-mono sm:text-xl tracking-tight">SQL转化器</h1>
         <p className="font-mono font-bold text-gray-600">
-          Human Language to SQL Translator
+          自然语言和SQL转换工具
         </p>
       </Link>
       <div className="flex items-center gap-3 pt-4">
         
-        <a
+        {/* <a
           className="rounded-full text-gray-500 dark:text-gray-400"
           href="https://github.com/whoiskatrin/sql-translator"
           rel="noopener noreferrer"
@@ -33,8 +33,8 @@ export const Header = () => {
             <Github />
             <p>Star on GitHub</p>
           </div>
-        </a>
-        <a
+        </a> */}
+        {/* <a
           className={`flex items-center justify-center space-x-2 py-2 px-6 rounded-full ${btnBgColor} text-black text-sm font-medium transition`}
           href="https://twitter.com/whoiskatrin"
           rel="noopener noreferrer"
@@ -54,7 +54,7 @@ export const Header = () => {
               />
             </svg>
           </div>
-        </a>
+        </a> */}
       </div>
     </header>
   );

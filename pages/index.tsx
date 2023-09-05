@@ -189,12 +189,12 @@ export default function Home() {
       <Header />
       <Head>
         <title className="flex justify-between items-center w-full mt-5 pb-7 sm:px-4 px-2">
-          {isHumanToSql ? "Human to SQL Translator" : "SQL to Human Translator"}
+          {isHumanToSql ? "自然语言转SQL" : "SQL转自然语言"}
         </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ThemeButton className="absolute top-2.5 right-2.5 text-gray-500 dark:text-gray-400 focus:outline-none hover:scale-125 transition" />
-      <a
+      {/* <a
         href="https://www.usechannel.com/?utm_source=chart-gpt&utm_medium=website-advert&utm_campaign=july-sponsorshiphttps://www.usechannel.com/?utm_source=chart-gpt&utm_medium=website-advert&utm_campaign=july-sponsorship"
         target="_blank"
       >
@@ -216,7 +216,7 @@ export default function Home() {
             Ask a question
           </Button>
         </div>
-      </a>
+      </a> */}
 
       <div className="flex flex-col md:flex-row w-full gap-6 bg-[#EEEEEE] dark:text-white dark:bg-black dark:border dark:border-white/20 rounded-2xl p-2">
         <div className="w-full">
@@ -229,7 +229,7 @@ export default function Home() {
                 htmlFor="inputText"
                 className="block font-medium mb-2 text-gray-700 dark:text-gray-200"
               >
-                {isHumanToSql ? "Human Language" : "SQL"}
+                {isHumanToSql ? "自然语言" : "SQL"}
               </label>
               <textarea
                 className={`appearance-none border-0 rounded-lg w-full py-2 px-3 bg-custom-gray-bg dark:bg-custom-dark-gray text-gray-700 dark:text-white leading-tight focus:outline-none focus:shadow-outline ${
@@ -239,7 +239,7 @@ export default function Home() {
                 rows={3}
                 placeholder={
                   isHumanToSql
-                    ? "e.g. show me all the cars that are red"
+                    ? "例如： 查询汽车颜色为红色的车"
                     : "SELECT * FROM cars WHERE color = 'red'"
                 }
                 value={inputText}
@@ -297,7 +297,7 @@ export default function Home() {
                       }
                     }}
                   >
-                    {showTableSchema ? "Remove Schema" : "Add Schema"}
+                    {showTableSchema ? "去除表结构" : "添加表结构"}
                   </button>
                 )}
 
@@ -316,7 +316,7 @@ export default function Home() {
                         <LoadingDots color="white" />
                       </>
                     ) : (
-                      `Generate ${isHumanToSql ? "SQL" : "Natural Language"}`
+                      `生成 ${isHumanToSql ? "SQL" : "自然语言"}`
                     )}
                   </div>
                 </button>
@@ -380,7 +380,7 @@ export default function Home() {
                 htmlFor="outputText"
                 className="block mb-2 font-medium  text-gray-700 dark:text-gray-200"
               >
-                {isHumanToSql ? "SQL" : "Human Language"}
+                {isHumanToSql ? "SQL" : "自然语言"}
               </label>
               <SyntaxHighlighter
                 language={isHumanToSql ? "sql" : "text"}
@@ -405,7 +405,7 @@ export default function Home() {
                   : outputText.toLowerCase() ||
                     (isHumanToSql
                       ? "SELECT * FROM cars WHERE color = 'red'"
-                      : "show me all the cars that are red")}
+                      : "查询颜色为红色的汽车")}
               </SyntaxHighlighter>
             </div>
 
